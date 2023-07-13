@@ -20,7 +20,7 @@ apt install mysql-server
 ```
 systemctl status mysql
 ```
-![screen1](https://github.com/KorolkovDenis/)
+![screen1](https://github.com/KorolkovDenis/12.2-DDL-DML/blob/main/screenshots/screen1.jpg)
 
 1.2. Создайте учётную запись sys_temp. 
 
@@ -34,7 +34,7 @@ mysql –u root –p
 ```
 CREATE USER ‘sys_temp’@’localhost’ IDENTIFIED BY ‘debian’;
 ```
-![screen2](https://github.com/KorolkovDenis/)
+![screen2](https://github.com/KorolkovDenis/12.2-DDL-DML/blob/main/screenshots/screen2.jpg)
 
 1.3. Выполните запрос на получение списка пользователей в базе данных. (скриншот)
 
@@ -42,13 +42,13 @@ CREATE USER ‘sys_temp’@’localhost’ IDENTIFIED BY ‘debian’;
 ```
 SELECT User,Host FROM mysql.user;
 ```
-![screen3](https://github.com/KorolkovDenis/)
+![screen3](https://github.com/KorolkovDenis/12.2-DDL-DML/blob/main/screenshots/screen3.jpg)
 
 1.4. Дайте все права для пользователя sys_temp. 
 
 Даю права доступа для sys_temp – ALL PRIVILEGES. Так как у меня сейчас нет созданных БД, ставлю ‘*’ –  ON * - то есть выбираю все БД и все таблицы - *TO. 
 
-![screen4](https://github.com/KorolkovDenis/)
+![screen4](https://github.com/KorolkovDenis/12.2-DDL-DML/blob/main/screenshots/screen4.jpg)
 
 По правам у меня получился так называемый SUPERUSER.
 
@@ -59,7 +59,7 @@ SELECT User,Host FROM mysql.user;
 SHOW GRANTS FOR ‘sys_temp’@’localhost’;
 ```
 
-![screen5](https://github.com/KorolkovDenis/)
+![screen5](https://github.com/KorolkovDenis/12.2-DDL-DML/blob/main/screenshots/screen5.jpg)
 
 1.6. Переподключитесь к базе данных от имени sys_temp.
 
@@ -70,7 +70,7 @@ ALTER USER 'sys_test'@'localhost' IDENTIFIED WITH mysql_native_password BY 'pass
 ```
 mysql – u sys_temp -p
 ```
-![screen6](https://github.com/KorolkovDenis/)
+![screen6](https://github.com/KorolkovDenis/12.2-DDL-DML/blob/main/screenshots/screen6.jpg)
 
 1.6. По ссылке https://downloads.mysql.com/docs/sakila-db.zip скачайте дамп базы данных.
 
@@ -82,7 +82,7 @@ mysql – u sys_temp -p
 mysql –u root -p
 CREATE DATABASE sakila DEFAULT CHARACTER SET utf8 DEFAULT COLLATE utf8_general_ci 
 ```
-![screen7](https://github.com/KorolkovDenis/)
+![screen7](https://github.com/KorolkovDenis/12.2-DDL-DML/blob/main/screenshots/screen7.jpg)
 
 Затем закинул в БД содержание:
 ```
@@ -96,11 +96,11 @@ mysql –u root –p sakila <home/korolkov/Загрузки/sakila-db/sakila-dat
 
 Открываю Dbeaver – смотрим диаграмму БД
 
-![screen8](https://github.com/KorolkovDenis/)
+![screen8](https://github.com/KorolkovDenis/12.2-DDL-DML/blob/main/screenshots/screen8.jpg)
 
 теперь через консоль:
 
-![screen9](https://github.com/KorolkovDenis/)
+![screen9](https://github.com/KorolkovDenis/12.2-DDL-DML/blob/main/screenshots/screen9.jpg)
 
 ### Задание 2
 Составьте таблицу, используя любой текстовый редактор или Excel, в которой должно быть два столбца: в первом должны быть названия таблиц восстановленной базы, во втором названия первичных ключей этих таблиц. Пример: (скриншот/текст)
@@ -145,7 +145,7 @@ FLUSH PRIVILEGES;
 
 ### Вопрос: Почему то не получилось убрать права конкретно для БД sakila. Пришлось убирать права на все БД для учетки: sys_temp.
 
-![screen10](https://github.com/KorolkovDenis/)
+![screen10](https://github.com/KorolkovDenis/12.2-DDL-DML/blob/main/screenshots/screen10.jpg)
 
 3.2. Выполните запрос на получение списка прав для пользователя sys_temp. (скриншот)
 
@@ -154,7 +154,7 @@ FLUSH PRIVILEGES;
 SHOW GRANTS FOR ‘sys_temp’@’localhost’;
 ```
 
-![screen11](https://github.com/KorolkovDenis/)
+![screen11](https://github.com/KorolkovDenis/12.2-DDL-DML/blob/main/screenshots/screen11.jpg)
 
 
-[Cсылка на google docs по «Работа с данными (DDL/DML)» - полное описание](https://docs.google.com/)
+[Cсылка на google docs по «Работа с данными (DDL/DML)» - полное описание](https://docs.google.com/document/d/1IX-C1rOvKDwhfc7ZJNHblBnVqZ6wkSbH/edit?usp=drive_link&ouid=104113173630640462528&rtpof=true&sd=true)
